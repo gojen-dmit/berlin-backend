@@ -1,6 +1,6 @@
 spring:
   datasource:
-    jdbcUrl: jdbc:postgresql://postgresql:5432/berlin
+    url: jdbc:postgresql://postgresql:5432/berlin
   jpa:
     properties:
       hibernate:
