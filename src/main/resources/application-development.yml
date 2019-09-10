@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    jdbcUrl: jdbc:postgresql://postgresql:5432/berlin
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
