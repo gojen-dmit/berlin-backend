@@ -1,25 +1,25 @@
-package de.bpghub.springbootdemo;
+package de.bpghub.cloudnativedevelopment.controller;
 
+import de.bpghub.cloudnativedevelopment.counter.Counter;
+import de.bpghub.cloudnativedevelopment.counter.CounterRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Slf4j
 @Controller
-public class HelloWorldController {
+public class HomeController {
 
     @Autowired
     private CounterRepository counterRepository;
 
     @GetMapping("/")
-    public String greetingTemplate(Model model) {
+    public String homeTemplate(Model model) {
 
         Counter berlin = counterRepository.findByName("berlin");
         if (berlin == null) {
@@ -32,8 +32,7 @@ public class HelloWorldController {
         model.addAttribute("hostname", getHostname());
         model.addAttribute("berlin", berlin);
 
-        String greeting = "Hello, world from " + getHostname() + ". Counter: " + berlin.getCount();
-        log.info("{}", greeting);
+        log.info("You are Visitor Number {} on {}", berlin.getCount(), getHostname());
         return "home";
     }
 

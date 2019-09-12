@@ -190,3 +190,4 @@ target
 
 # End of https://www.gitignore.io/api/java,eclipse,intellij+iml,visualstudiocode
 berlin.db.*
+logs

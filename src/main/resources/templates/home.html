@@ -93,6 +93,7 @@
             border: 1px solid #999999;
             display: table-cell;
             padding: 3px 10px;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .divTableHeading {
@@ -114,29 +115,28 @@
 </head>
 
 <body>
-    <header>
-        <img th:src="@{./bpgit_transparent.png}"/>
-        <h1>Cloud Native Development Experience</h1>
-        <!--<img src="./world_digits.png">  -->
-        <h3>You are Visitor Number <span th:text="${berlin.count}">3</span></h3>
-        <hr>
-        <h2>Technical Details</h2>
+<header>
+    <img th:src="@{./bpgit_transparent.png}"/>
+    <h1>Cloud Native Development Experience</h1>
+    <!--<img src="./world_digits.png">  -->
+    <h3>You are Visitor Number <span th:text="${berlin.count}">3</span></h3>
+    <hr>
+    <h2>Technical Details</h2>
 
-        <div class="divTable">
-            <div class="divTableBody">
-                <div class="divTableRow">
-                    <div class="divTableCell">hostname</div>
-                    <div class="divTableCell" th:text="${hostname}">dummyhostname</div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
+    <div class="divTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">Hostname</div>
+                <div class="divTableCell" th:text="${hostname}">dummyhostname</div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">&nbsp;</div>
+                <div class="divTableCell">&nbsp;</div>
             </div>
         </div>
+    </div>
 
-    </header>
-
+</header>
 
 </body>
 
