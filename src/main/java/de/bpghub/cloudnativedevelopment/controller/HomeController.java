@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Slf4j
@@ -23,6 +25,7 @@ public class HomeController {
     @GetMapping("/")
     public String homeTemplate(@RequestHeader Map<String, String> headers, Model model) {
 
+
         Counter berlin = counterRepository.findByName("berlin");
         if (berlin == null) {
             berlin = new Counter();
@@ -34,6 +37,7 @@ public class HomeController {
         model.addAttribute("hostname", getHostname());
         model.addAttribute("berlin", berlin);
         model.addAttribute("userAgent", headers.get("user-agent"));
+        model.addAttribute( "date", new SimpleDateFormat("YYYY-mm-dd HH:MM:ss").format(new Date()).toString());
 
         log.info("You are Visitor Number {} on {}", berlin.getCount(), getHostname());
         log.info("{}", headers);
